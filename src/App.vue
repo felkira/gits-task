@@ -1,28 +1,27 @@
 <template>
-  <section class="app-container" id="app">
-    <h1 class="app-header">My To Do List App</h1>
-    <div class="add-task">
-      <input type="text" spellcheck="false" placeholder="Input your task here ..." class="task-input" v-model="tasks.name" @keyup.enter="newTask">
-      <input type="submit" value=" " class="submit-task" title="Add Task" @click="newTask">
-    </div>
-    <ul class="task-list">
-        <li class="task-list-item" v-for="task in tasks" :key="task.id">
-            <label class="task-list-item-label">
+  <section class="app">
+        <h1>Create your task</h1>
+        <div class="task-input">
+            <input type="text" spellcheck="false" placeholder="Input your task here ..." v-model="tasks.name" @keyup.enter="newTask">
+            <button title="Add Task" @click="newTask"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <ul>
+            <li class="task-item" v-for="task in tasks" :key="task.id">
                 <input type="checkbox">
                 <span>{{ task.name }}</span>
-            </label>
-            <span class="delete-btn" title="Delete Task" @click="delTask(task)">{{ task.del }}</span>
-        </li>
-    </ul>
-  </section>
+                <i class="fa-solid fa-trash-can" title="Delete Task" @click="delTask(task)">{{ task.del }}</i>
+            </li>
+        </ul>
+    </section>
 </template>
 
 <script>
 export default {
   data() {
         return {
-            title: 'to do list',
-            tasks: [],
+            tasks: [
+                {name: 'Here is your task'},
+            ],
         }
   },
   methods: {

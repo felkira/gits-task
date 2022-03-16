@@ -5,6 +5,7 @@
 }
 
 * {
+  color: var(--general);
   margin: 0;
   box-sizing: border-box;
 }
@@ -14,19 +15,57 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: black;
-  color: #FFF;
+  height: 100vh;
 }
 
-input {
+.app {
+  min-width: 25rem;
+  max-width: 40rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+h1 {
+  color: white;
+}
+
+.task-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.task-input input {
+  width: calc(100% - 3rem);
+  height: 2rem;
+  margin-right: .75rem;
+  border-radius: 2rem;
   outline: none;
+  border: none;
+  font-size: .9rem;
+  padding: 0 .75rem;
+}
+
+.task-input button {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+i {
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 ul {
@@ -34,66 +73,33 @@ ul {
   padding: 0;
 }
 
-.app-container {
-  max-width: 30rem;
-  width: 100%;
-  max-height: 100%;
-  background-color: black;
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  overflow: auto;
-}
-
-.app-header {
-  font-size: 1.25rem;
-  line-height: 2rem;
-  margin: 0 0 1rem 0;
-}
-
-.submit-task {
-  width: 2.25rem;
-  height: 2.25rem;
-  flex-shrink: 0;
-  border: 0;
-  background-image: url("./assets/plus-solid.svg");
-  background-size: 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: white;
-}
-
-.add-task {
-  height: 2.5rem;
-  font-size: 1rem;
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.task-input {
-  width: 100%;
-  padding: 1rem;
+input {
   outline: none;
-  border: none;
-  background-color: white;
-  border-radius: 1rem;
-  margin-right: 1rem;
-  color: var(--general);
-  font-size: 1rem;
-  font-weight: bolder;
 }
 
-.task-list-item {
+.task-item {
   background-color: white;
   display: flex;
   align-items: center;
   padding: .5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin-bottom: .75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.task-list-item input {
+.task-item span {
+  width: calc(100% - 3rem);
+  margin: 0 .5rem;
+  font-size: .9rem;
+  line-height: 1.2rem;
+}
+
+.task-item input {
   width: 1rem;
   height: 1rem;
   border: 1px solid gray;
@@ -103,49 +109,22 @@ ul {
   background-position: center;
   background-size: 0;
   transition: .2s;
-  margin-right: .5rem;
   flex-shrink: .5rem;
-  margin-top: .25rem;
   appearance: none;
 }
 
-.task-list-item input:hover {
+.task-item input:hover {
   border-color: gray;
   box-shadow: 0 0 0 3px gainsboro;
 }
 
-.task-list-item input:checked {
+.task-item input:checked {
   background-size: .5rem;
   border: 1px solid gray;
   background-color: gainsboro;
 }
 
-.task-list-item input:checked + span {
+.task-item input:checked + span {
   color: var(--general);
-  text-decoration: line-through var(--general);
-}
-
-.task-list-item-label {
-  display: flex;
-  align-items: flex-start;
-  color: var(--general);
-  margin-right: .5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  position: relative;
-  transition: .2s;
-  cursor: pointer;
-}
-
-.delete-btn {
-  margin-left: auto;
-  margin-right: .25rem;
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  background-image: url("./assets/fa-solid fa-trash-can.svg");
-  background-repeat: no-repeat;
-  background-size: .75rem;
-  background-position: center;
-  cursor: pointer;
+  text-decoration: line-through var(--general) 2px;
 }
