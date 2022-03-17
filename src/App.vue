@@ -5,6 +5,7 @@
             <input type="text" spellcheck="false" placeholder="Input your task here ..." v-model="task" @keyup.enter="newTask">
             <button title="Add Task" @click="newTask"><i class="fa-solid fa-plus"></i></button>
         </div>
+        <p v-if="tasks.length === 0">Here is Your Task</p>
         <ul>
             <li class="task-item" v-for="task in tasks" :key="task.id">
                 <input type="checkbox">
@@ -20,9 +21,7 @@ export default {
   data() {
         return {
             task: '',
-            tasks: [
-                'Here is your task',
-            ],
+            tasks: [],
         }
   },
   methods: {
