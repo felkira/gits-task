@@ -1,6 +1,6 @@
 <template lang="">
-    <div>
-        Cost Report
+    <div class="page">
+        Project Cost Report
     </div>
 </template>
 

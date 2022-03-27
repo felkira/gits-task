@@ -109,4 +109,10 @@ body {
   height: 100%;
   color: black;
 }
+
+.page {
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
 </style>
