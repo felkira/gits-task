@@ -9,7 +9,7 @@ import HelloWorld from './components/HelloWorld.vue'
           GPP
       </div>
       <div class="side-menus">
-        <router-link to="/" class="side-menu active">
+        <router-link to="/" class="side-menu">
           <span class="side-icon"><i class="fa-solid fa-house-chimney"></i></span>
           <span class="side-text">Dashboard</span>
         </router-link>
@@ -30,19 +30,6 @@ import HelloWorld from './components/HelloWorld.vue'
     <router-view class="view" />
   </div>
 </template>
-
-<script>
-export default {
-  mounted() {
-    const list = document.querySelectorAll('.side-menu');
-    function activeLink() {
-      list.forEach((item) => item.classList.remove('active'));
-      this.classList.add('active');
-    }
-    list.forEach((item) => item.addEventListener('click', activeLink));
-  },
-}
-</script>
 
 <style>
 * {
@@ -78,7 +65,7 @@ body {
 .side-menus {
   font-size: 1rem;
   width: 100%;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .side-menu {
@@ -88,12 +75,11 @@ body {
   color: white;
 }
 
-.side-menu:hover, .active {
+.side-menu:hover, .router-link-exact-active {
   background-color: white;
   color: black;
   font-weight: bolder;
   cursor: pointer;
-  transition: .2s;
 }
 
 .side-icon {
