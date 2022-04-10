@@ -31,10 +31,10 @@ export default {
           <span class="side-icon"><i class="fa-solid fa-right-to-bracket"></i></span>
           <span class="side-text">Login</span>
         </router-link>
-        <a href="#" v-else class="side-menu router-link-exact-active">
-          <span class="side-icon rotate"><i class="fa-solid fa-right-to-bracket"></i></span>
-          <span class="side-text">Logout</span>
-        </a>
+        <router-link href="#" v-else to="/profile" class="side-menu router-link-exact-active">
+          <span class="side-icon"><i class="fa-solid fa-user-check"></i></span>
+          <span class="side-text">Signed✔</span>
+        </router-link>
       </div>
     </div>
     <router-view class="view" />
@@ -117,9 +117,5 @@ body {
   padding: 1.75rem;
   font-size: 2rem;
   font-weight: bold;
-}
-
-.rotate {
-  transform: rotate(180deg);
 }
 </style>
