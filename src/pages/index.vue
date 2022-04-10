@@ -1,11 +1,16 @@
 <template lang="">
     <div class="page">
-        Dashboard
+        Welcome to my first pinia project
     </div>
 </template>
 
-<script>
-export default {
-    
+<style scoped>
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
 }
-</script>
+</style>
