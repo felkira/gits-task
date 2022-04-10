@@ -31,7 +31,7 @@ export default {
           <span class="side-icon"><i class="fa-solid fa-right-to-bracket"></i></span>
           <span class="side-text">Login</span>
         </router-link>
-        <a href="#" v-else to="/login" class="side-menu">
+        <a href="#" v-else class="side-menu router-link-exact-active">
           <span class="side-icon rotate"><i class="fa-solid fa-right-to-bracket"></i></span>
           <span class="side-text">Logout</span>
         </a>
