@@ -1,7 +1,5 @@
-<template lang="">
-    <div class="page">
-        Welcome to my first pinia project
-    </div>
+<template>
+  <div class="page">Welcome to my first pinia project</div>
 </template>
 
 <style scoped>
